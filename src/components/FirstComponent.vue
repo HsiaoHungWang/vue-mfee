@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ message }}</h2>
+  <h2 :title="message">{{ message }}</h2>
   <input type="text" v-model="message" />
   <button @click="add">{{ count }}</button>
 </template>
