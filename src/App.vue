@@ -7,7 +7,7 @@ import SecondComponent from './components/SecondComponent.vue';
 
 <template>
   <h2>Hello Vue!!!!</h2>
-  <FirstComponent></FirstComponent>
+ <FirstComponent></FirstComponent>
   <SecondComponent></SecondComponent>
 </template>
 
