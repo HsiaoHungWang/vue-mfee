@@ -1,5 +1,9 @@
 <script setup>
 import { ref, watch, watchEffect } from 'vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 import BmiCalc from './components/BmiCalc.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import FirstComponent from './components/FirstComponent.vue';
@@ -34,15 +38,16 @@ watchEffect(()=>{
 </script>
 
 <template>
-  <h2>Hello Vue!!!! {{ clock }}</h2>
-  <RouterLink :to="{name:'home'}">首頁</RouterLink> |
-  <RouterLink :to="{name:'about'}">關於</RouterLink> |
-  <RouterLink :to="{name:'contact'}">聯絡我們</RouterLink> |
-  <RouterLink :to="{name:'member',params:{id:20}}">會員中心</RouterLink>
-  <hr />
-  
-  <RouterView></RouterView>
-
+  <div class="container">
+    <h2>Hello Vue!!!! {{ clock }}</h2>
+    <RouterLink :to="{name:'home'}">首頁</RouterLink> |
+    <RouterLink :to="{name:'about'}">關於</RouterLink> |
+    <RouterLink :to="{name:'contact'}">聯絡我們</RouterLink> |
+    <RouterLink :to="{name:'member',params:{id:20}}">會員中心</RouterLink>
+    <hr />
+    
+    <RouterView></RouterView>
+</div>
 
 
 
