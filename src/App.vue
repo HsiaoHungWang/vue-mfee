@@ -35,13 +35,15 @@ watchEffect(()=>{
 
 <template>
   <h2>Hello Vue!!!! {{ clock }}</h2>
+  <hr />
  <!-- <FirstComponent></FirstComponent>
   <SecondComponent></SecondComponent>
   <ComputedDemo></ComputedDemo>
-  <BmiCalc></BmiCalc> -->
+  <BmiCalc></BmiCalc> 
   <HomeView></HomeView>
   <AboutView></AboutView>
-  <ContactView></ContactView>
+  <ContactView></ContactView>-->
+  <RouterView></RouterView>
 </template>
 
 <style scoped>
