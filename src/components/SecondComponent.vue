@@ -18,6 +18,8 @@ const author = ref({
 
 const id = ref("100903")
 const homeUrl = ref("https://www.ispan.com.tw")
+const isDisabled = ref(false)
+
 </script>
 
 <template>
@@ -33,12 +35,16 @@ const homeUrl = ref("https://www.ispan.com.tw")
 <p :id="id">{{ id }}</p>
 <p :id>{{ id }}</p>
 <a :href="homeUrl">iSpan</a>
-
+<hr />
+<button :disabled="isDisabled">Click</button>
+<hr />
 <img src="/images/batch.jpg" />
 <img src="@/assets/anya-300-03.png" />
+
 
 </template>
 
 <style lang="css" scoped>
  h2{color:blue}
+
 </style>
