@@ -35,7 +35,14 @@ watchEffect(()=>{
 
 <template>
   <h2>Hello Vue!!!! {{ clock }}</h2>
+  <RouterLink to="/">首頁</RouterLink> |
+  <RouterLink to="/about">關於</RouterLink> |
+  <RouterLink to="/contact">聯絡我們</RouterLink>
   <hr />
+  
+  <RouterView></RouterView>
+
+
  <!-- <FirstComponent></FirstComponent>
   <SecondComponent></SecondComponent>
   <ComputedDemo></ComputedDemo>
@@ -43,7 +50,7 @@ watchEffect(()=>{
   <HomeView></HomeView>
   <AboutView></AboutView>
   <ContactView></ContactView>-->
-  <RouterView></RouterView>
+  
 </template>
 
 <style scoped>
