@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch, watchEffect } from 'vue';
 import BmiCalc from './components/BmiCalc.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import FirstComponent from './components/FirstComponent.vue';
@@ -14,10 +14,19 @@ const formatTime = (today) => {
 
 const clock = ref(formatTime(new Date()))
 
+// watch(clock,(newTime, oldTime)=>{
+//   console.log('new：', newTime)
+//   console.log('old：', oldTime)
+// },{once:true}) //immediate:true
 
-setInterval(() => {
-   clock.value = formatTime(new Date())
-}, 1000)
+watchEffect(()=>{
+  console.log(clock.value)
+  //call api?id=1 fetch
+})
+
+// setInterval(() => {
+//    clock.value = formatTime(new Date())
+// }, 1000)
 
 </script>
 
