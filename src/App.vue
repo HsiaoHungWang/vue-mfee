@@ -35,9 +35,9 @@ watchEffect(()=>{
 
 <template>
   <h2>Hello Vue!!!! {{ clock }}</h2>
-  <RouterLink to="/">首頁</RouterLink> |
-  <RouterLink to="/about">關於</RouterLink> |
-  <RouterLink to="/contact">聯絡我們</RouterLink>
+  <RouterLink :to="{name:'home'}">首頁</RouterLink> |
+  <RouterLink :to="{name:'about'}">關於</RouterLink> |
+  <RouterLink :to="{name:'contact'}">聯絡我們</RouterLink>
   <hr />
   
   <RouterView></RouterView>

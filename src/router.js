@@ -6,19 +6,24 @@ import ContactView from "./views/ContactView.vue"
 //路由設定
 const routes = [
   // http://localhost:5173/
+  // http://localhost:5173/index
   {
     path:'/',  
-    component: HomeView
+    component: HomeView,
+    alias:'/index',
+    name:'home'
    },
    //http://localhost:5173/about
    {
-    path:'/about',
-    component:AboutView
+    path:'/about_seo',
+    component:AboutView,
+    name:'about'
    },
     //http://localhost:5173/contact
     {
       path:'/contact',
-      component:ContactView
+      component:ContactView,
+      name:'contact'
     }
 ]
 
