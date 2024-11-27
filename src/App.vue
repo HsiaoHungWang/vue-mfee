@@ -1,4 +1,5 @@
 <script setup>
+import BmiCalc from './components/BmiCalc.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import SecondComponent from './components/SecondComponent.vue';
@@ -11,6 +12,7 @@ import SecondComponent from './components/SecondComponent.vue';
  <!-- <FirstComponent></FirstComponent>
   <SecondComponent></SecondComponent> -->
   <ComputedDemo></ComputedDemo>
+  <BmiCalc></BmiCalc>
 </template>
 
 <style scoped>
