@@ -19,7 +19,10 @@ const author = ref({
 const id = ref("100903")
 const homeUrl = ref("https://www.ispan.com.tw")
 const isDisabled = ref(false)
+const message = ref("Hello Vue!!")
 
+const num1 = ref(0)
+const num2 = ref(0)
 </script>
 
 <template>
@@ -36,12 +39,19 @@ const isDisabled = ref(false)
 <p :id>{{ id }}</p>
 <a :href="homeUrl">iSpan</a>
 <hr />
-<button :disabled="isDisabled">Click</button>
+<button  :disabled="isDisabled">Click</button>
+
+<!-- <img src="/images/batch.jpg" />
+<img src="@/assets/anya-300-03.png" /> -->
+
+
 <hr />
-<img src="/images/batch.jpg" />
-<img src="@/assets/anya-300-03.png" />
 
-
+<!--Two Way Binding-->
+<input type="text" v-model.lazy.trim="message"><span>{{ message }}{{ message.length }}</span>
+<input type="text" v-model.number="num1" />
+<input type="text" v-model.number="num2" />
+<p>{{ num1 + num2 }}</p>
 </template>
 
 <style lang="css" scoped>
