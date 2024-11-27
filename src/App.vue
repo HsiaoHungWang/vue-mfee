@@ -11,6 +11,7 @@ import SecondComponent from './components/SecondComponent.vue';
 import HomeView from './views/HomeView.vue';
 import AboutView from './views/AboutView.vue';
 import ContactView from './views/ContactView.vue';
+import NavbarComponent from './components/NavbarComponent.vue';
 
 const formatTime = (today) => {
   const hours = String(today.getHours()).padStart(2, '0');
@@ -39,11 +40,9 @@ watchEffect(()=>{
 
 <template>
   <div class="container">
+    <NavbarComponent></NavbarComponent>
     <h2>Hello Vue!!!! {{ clock }}</h2>
-    <RouterLink :to="{name:'home'}">首頁</RouterLink> |
-    <RouterLink :to="{name:'about'}">關於</RouterLink> |
-    <RouterLink :to="{name:'contact'}">聯絡我們</RouterLink> |
-    <RouterLink :to="{name:'member',params:{id:20}}">會員中心</RouterLink>
+    
     <hr />
     
     <RouterView></RouterView>
