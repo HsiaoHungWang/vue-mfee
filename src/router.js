@@ -6,6 +6,7 @@ import Team1View from "./views/Team1View.vue"
 import Team2View from "./views/Team2View.vue"
 import MemberCenter from "./views/MemberCenter.vue"
 import NotFound from "./views/NotFound.vue"
+import DirectivesView from "./views/DirectivesView.vue"
 
 //路由設定
 const routes = [
@@ -50,6 +51,12 @@ const routes = [
       component:MemberCenter,
       name:'member',
       props:true
+    },
+    //http://localhost:5173/directive
+    {
+      path:'/directive',
+      component:DirectivesView,
+      name:'directive'
     },
     //404
     {
