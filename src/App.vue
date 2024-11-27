@@ -4,6 +4,9 @@ import BmiCalc from './components/BmiCalc.vue';
 import ComputedDemo from './components/ComputedDemo.vue';
 import FirstComponent from './components/FirstComponent.vue';
 import SecondComponent from './components/SecondComponent.vue';
+import HomeView from './views/HomeView.vue';
+import AboutView from './views/AboutView.vue';
+import ContactView from './views/ContactView.vue';
 
 const formatTime = (today) => {
   const hours = String(today.getHours()).padStart(2, '0');
@@ -33,9 +36,12 @@ watchEffect(()=>{
 <template>
   <h2>Hello Vue!!!! {{ clock }}</h2>
  <!-- <FirstComponent></FirstComponent>
-  <SecondComponent></SecondComponent> -->
+  <SecondComponent></SecondComponent>
   <ComputedDemo></ComputedDemo>
-  <BmiCalc></BmiCalc>
+  <BmiCalc></BmiCalc> -->
+  <HomeView></HomeView>
+  <AboutView></AboutView>
+  <ContactView></ContactView>
 </template>
 
 <style scoped>
