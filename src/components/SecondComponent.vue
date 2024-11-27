@@ -48,6 +48,7 @@ const num2 = ref(0)
 <hr />
 
 <!--Two Way Binding-->
+
 <input type="text" v-model.lazy.trim="message"><span>{{ message }}{{ message.length }}</span>
 <input type="text" v-model.number="num1" />
 <input type="text" v-model.number="num2" />
