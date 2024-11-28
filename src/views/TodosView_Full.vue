@@ -1,5 +1,4 @@
 <script setup>
-import TodosFooter from '@/components/TodosFooter.vue';
 import { computed, ref, watchEffect } from 'vue';
 
 const newTodo = ref('')
@@ -25,7 +24,7 @@ const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).subs
 const enterHandler = () => {
   todos.value.push({ "id": uniqueId(), "title": newTodo.value, "completed": false })
   clearHandler()
-  //console.log(todos.value)
+  console.log(todos.value)
 }
 
 //刪除代辦事項
@@ -65,7 +64,8 @@ const clearHandler = () => {
     <div class="col-3"></div>
     <div class="col-6">
       <h2>代辦事項</h2>
-    
+      <input type="text" class="form-control" placeholder="想要做甚麼?" v-model="newTodo" @keyup.enter="enterHandler"
+        @keyup.delete="clearHandler" />
       <ul class="list-group mt-3">
         <li v-for="todo in todos" :key="todo.id" class="list-group-item">
           <div class="d-flex justify-content-between">
@@ -77,7 +77,10 @@ const clearHandler = () => {
           </div>
         </li>
       </ul>
-     <TodosFooter :abc="remaining" @xyz="removeCompleted"></TodosFooter>
+      <div v-if="todos.length > 0" class="mt-3 d-flex justify-content-between">
+        <strong class=" me-3">尚有 {{ remaining }} 個工作未完成</strong>
+        <button class="btn btn-warning me-3" @click="removeCompleted">清除完成工作</button>
+      </div>
 
     </div>
     <div class="col-3"></div>
