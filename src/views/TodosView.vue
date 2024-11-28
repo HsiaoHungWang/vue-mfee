@@ -1,8 +1,8 @@
 <script setup>
+import TodoAdd from '@/components/TodoAdd.vue';
 import TodosFooter from '@/components/TodosFooter.vue';
 import { computed, ref, watchEffect } from 'vue';
 
-const newTodo = ref('')
 // const todos = ref([
 //   { "id": "m21uwqfprb0ncx4", "title": "聚餐@18:00", "completed": false },
 //   { "id": "m21w6x73hw2tvrc", "title": "運動", "completed": false },
@@ -22,10 +22,10 @@ watchEffect(()=>{
 const uniqueId = () => Date.now().toString(36) + Math.random().toString(36).substring(2, 9);
 
 //新增代辦事項
-const enterHandler = () => {
-  todos.value.push({ "id": uniqueId(), "title": newTodo.value, "completed": false })
-  clearHandler()
-  //console.log(todos.value)
+//todo 會接收子組件傳過來資料
+const addHandler = todo => {
+  todos.value.push({ "id": uniqueId(), "title": todo, "completed": false })
+ 
 }
 
 //刪除代辦事項
@@ -53,10 +53,7 @@ const remaining = computed(()=>{
 
 
 
-//清除文字方塊的內容
-const clearHandler = () => {
-  newTodo.value = ""
-}
+
 
 </script>
 
@@ -65,7 +62,7 @@ const clearHandler = () => {
     <div class="col-3"></div>
     <div class="col-6">
       <h2>代辦事項</h2>
-    
+     <TodoAdd @add="addHandler"></TodoAdd>
       <ul class="list-group mt-3">
         <li v-for="todo in todos" :key="todo.id" class="list-group-item">
           <div class="d-flex justify-content-between">
