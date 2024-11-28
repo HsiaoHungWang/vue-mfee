@@ -1,5 +1,7 @@
 <script setup>
-  
+  import { useTodoStore } from '@/stores/todos';
+  const todoStore = useTodoStore()
+
 </script>
 
 <template>
@@ -31,7 +33,8 @@
         </li>
         <li class="nav-item">
          
-    <RouterLink :to="{name:'todos'}" class="nav-link" activeClass="active">代辦事項</RouterLink>
+    <RouterLink :to="{name:'todos'}" class="nav-link" activeClass="active">代辦事項 <span class="badge text-bg-secondary">{{todoStore.numberOfTodos}}</span>
+    </RouterLink>
         </li>
         <li class="nav-item">
         

@@ -2,6 +2,9 @@
 import TodoAdd from '@/components/TodoAdd.vue';
 import TodosFooter from '@/components/TodosFooter.vue';
 import { computed, ref, watchEffect } from 'vue';
+import { useTodoStore } from '@/stores/todos';
+
+const todoStore = useTodoStore()
 
 // const todos = ref([
 //   { "id": "m21uwqfprb0ncx4", "title": "聚餐@18:00", "completed": false },
@@ -48,6 +51,7 @@ const removeCompleted = () => {
 //計算還有幾個工作待完成
 const remaining = computed(()=>{
   const activeTodos = todos.value.filter(todo => !todo.completed)
+  todoStore.numberOfTodosChange(activeTodos.length)
   return activeTodos.length
 })
 
