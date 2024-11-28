@@ -17,6 +17,25 @@ const enterHandler = ()=>{
   clearHandler()
   console.log(todos.value)
 }
+
+//刪除代辦事項
+const removeTodo  = todo => {
+  //回傳todo的索引值
+  const idx = todos.value.indexOf(todo)
+  //刪除
+  todos.value.splice(idx,1)
+}
+
+//移除所有完成的工作
+const removeCompleted = () => {
+for (let i = todos.value.length - 1; i >= 0; i--) {
+ if (todos.value[i].completed) {
+ todos.value.splice(i, 1)
+ }
+ }
+}
+
+
 //清除文字方塊的內容
 const clearHandler = ()=>{
   newTodo.value = ""
@@ -41,12 +60,12 @@ const clearHandler = ()=>{
 
     
    
-    <button class="badge bg-danger rounded-pill border-0">X</button></div>
+    <button @click="removeTodo(todo)" class="badge bg-danger rounded-pill border-0">X</button></div>
   </li>
 </ul>
 <div class="mt-3 d-flex justify-content-between">
 <strong class=" me-3">尚有 {{  }} 個工作未完成</strong>
-<button class="btn btn-warning me-3">清除完成工作</button>
+<button class="btn btn-warning me-3" @click="removeCompleted">清除完成工作</button>
 </div>
 
     </div>
