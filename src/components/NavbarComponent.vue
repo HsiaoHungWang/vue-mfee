@@ -21,7 +21,9 @@
         </li>
         <li class="nav-item">
          
-    <RouterLink :to="{name:'contact'}" class="nav-link" activeClass="active">聯絡我們</RouterLink>
+    <RouterLink :to="{name:'contact'}" class="nav-link" activeClass="active">聯絡我們    
+    </RouterLink>
+    
         </li>
         <li class="nav-item">
          

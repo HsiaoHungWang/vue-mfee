@@ -4,6 +4,22 @@ import { ref } from 'vue';
   const message = ref("<h4>指令介紹</h4>")
   const isShow = ref(true)
   const isLoggedIn = ref(false)
+
+  const regions = ref([
+{ "name": "中山區", "code": 104 },
+{ "name": "大安區", "code": 106 },
+{ "name": "信義區", "code": 110 },
+{ "name": "內湖區", "code": 114 },
+ { "name": "士林區", "code": 111 },
+{ "name": "中正區", "code": 100 },
+{ "name": "松山區", "code": 105 },
+ { "name": "北投區", "code": 112 },
+ { "name": "大同區", "code": 103 },
+ { "name": "文山區", "code": 116 },
+ { "name": "南港區", "code": 115 },
+{ "name": "萬華區", "code": 108 }
+]);
+const selectedValue = ref('110')
 </script>
 
 <template>
@@ -21,6 +37,9 @@ import { ref } from 'vue';
   <button>登入</button>
  </div>
 
+ <select v-model="selectedValue">
+  <option v-for="(region,index) in regions" :key="region.code" :value="region.code">{{index}}{{region.name}}</option> 
+ </select><span>{{selectedValue}}</span>
 </div>
 </template>
 
