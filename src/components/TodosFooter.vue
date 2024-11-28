@@ -1,7 +1,10 @@
 <script setup>
-   const props = defineProps({
-     abc:Number
-   })
+import { useTodoStore } from '@/stores/todos';
+const todoStore = useTodoStore()
+
+  //  const props = defineProps({
+  //    abc:Number
+  //  })
 
    const emit = defineEmits(['xyz'])
 
@@ -13,7 +16,7 @@
 
 <template>
    <div class="mt-3 d-flex justify-content-between">
-        <strong class=" me-3">尚有 {{ abc }} 個工作未完成</strong>
+        <strong class=" me-3">尚有 {{ todoStore.numberOfTodos }} 個工作未完成</strong>
         <button class="btn btn-warning me-3" @click="clickHandler">清除完成工作</button>
       </div>
 </template>

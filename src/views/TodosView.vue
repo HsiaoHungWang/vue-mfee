@@ -18,6 +18,11 @@ const todos = ref(JSON.parse(localStorage.getItem("todos")) || [])
 //資料寫進localStorage
 watchEffect(()=>{
   localStorage.setItem('todos', JSON.stringify(todos.value ))
+
+  //更新store中的資料
+  const activeTodos = todos.value.filter(todo => !todo.completed)
+  todoStore.numberOfTodosChange(activeTodos.length)
+ 
 })
 
 
@@ -49,11 +54,10 @@ const removeCompleted = () => {
 }
 
 //計算還有幾個工作待完成
-const remaining = computed(()=>{
-  const activeTodos = todos.value.filter(todo => !todo.completed)
-  todoStore.numberOfTodosChange(activeTodos.length)
-  return activeTodos.length
-})
+// const remaining = computed(()=>{
+//   const activeTodos = todos.value.filter(todo => !todo.completed)
+//   return activeTodos.length
+// })
 
 
 
@@ -78,8 +82,8 @@ const remaining = computed(()=>{
           </div>
         </li>
       </ul>
-     <TodosFooter :abc="remaining" @xyz="removeCompleted"></TodosFooter>
-
+     <!-- <TodosFooter :abc="remaining" @xyz="removeCompleted"></TodosFooter> -->
+     <TodosFooter @xyz="removeCompleted"></TodosFooter>
     </div>
     <div class="col-3"></div>
   </div>
