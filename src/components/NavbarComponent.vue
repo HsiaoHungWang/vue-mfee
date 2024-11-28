@@ -30,6 +30,10 @@
     <RouterLink :to="{name:'directive'}" class="nav-link" activeClass="active">指令介紹</RouterLink>
         </li>
         <li class="nav-item">
+         
+    <RouterLink :to="{name:'todos'}" class="nav-link" activeClass="active">代辦事項</RouterLink>
+        </li>
+        <li class="nav-item">
         
     <RouterLink :to="{name:'member',params:{id:20}}" class="nav-link" activeClass="active">會員中心</RouterLink>
         </li>

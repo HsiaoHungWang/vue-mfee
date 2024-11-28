@@ -7,6 +7,7 @@ import Team2View from "./views/Team2View.vue"
 import MemberCenter from "./views/MemberCenter.vue"
 import NotFound from "./views/NotFound.vue"
 import DirectivesView from "./views/DirectivesView.vue"
+import TodosView from "./views/TodosView.vue"
 
 //路由設定
 const routes = [
@@ -57,6 +58,12 @@ const routes = [
       path:'/directive',
       component:DirectivesView,
       name:'directive'
+    },
+    //http://localhost:5173/todos
+    {
+      path:'/todos',
+      component:TodosView,
+      name:'todos'
     },
     //404
     {
