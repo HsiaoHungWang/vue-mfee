@@ -8,6 +8,7 @@ import MemberCenter from "./views/MemberCenter.vue"
 import NotFound from "./views/NotFound.vue"
 import DirectivesView from "./views/DirectivesView.vue"
 import TodosView from "./views/TodosView.vue"
+import CategoryMgmt from "./views/CategoryMgmt.vue"
 
 //路由設定
 const routes = [
@@ -64,6 +65,12 @@ const routes = [
       path:'/todos',
       component:TodosView,
       name:'todos'
+    },
+    //http://localhost:5173/category
+    {
+      path:'/category',
+      component:CategoryMgmt,
+      name:'category'
     },
     //404
     {

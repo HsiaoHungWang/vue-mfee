@@ -35,7 +35,11 @@
          
     <RouterLink :to="{name:'todos'}" class="nav-link" activeClass="active">代辦事項 <span class="badge text-bg-secondary">{{todoStore.numberOfTodos}}</span>
     </RouterLink>
-        </li>
+        </li>   <li class="nav-item">
+         
+         <RouterLink :to="{name:'category'}" class="nav-link" activeClass="active">景點管理 
+         </RouterLink>
+             </li>
         <li class="nav-item">
         
     <RouterLink :to="{name:'member',params:{id:20}}" class="nav-link" activeClass="active">會員中心</RouterLink>
