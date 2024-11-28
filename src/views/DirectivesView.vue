@@ -58,10 +58,25 @@ const radius = ref(25)
  </ul>
 
  <input type="color" v-model="bgColor" />
- <div style="width:200px;height: 200px;border: 1px solid green;"
+ <div @mouseenter="radius+=10" style="width:200px;height: 200px;border: 1px solid green;"
     :style="{backgroundColor:bgColor,'border-radius': radius + 'px'}"></div>
+
+
+    <h2 :class="{del:false, danger:false}">Hello Vue!!</h2>
+
+
 </template>
 
 <style lang="css" scoped>
+.del{
+  text-decoration: line-through;
+}
 
+.size{
+  font-size:24px
+}
+
+.danger{
+  color:red
+}
 </style>
