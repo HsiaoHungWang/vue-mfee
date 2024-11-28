@@ -22,7 +22,8 @@ import { ref } from 'vue';
 const selectedValue = ref('110')
 
 const user = ref({ "name": "Tom", "email": "Tom@gmail.com", "age": 30 })
-
+const bgColor = ref('green')
+const radius = ref(25)
 </script>
 
 <template>
@@ -55,6 +56,10 @@ const user = ref({ "name": "Tom", "email": "Tom@gmail.com", "age": 30 })
  <ul class="pagination">   
     <li class="page-item" v-for="page in 10"><a class="page-link" href="#">{{page}}</a></li> 
  </ul>
+
+ <input type="color" v-model="bgColor" />
+ <div style="width:200px;height: 200px;border: 1px solid green;"
+    :style="{backgroundColor:bgColor,'border-radius': radius + 'px'}"></div>
 </template>
 
 <style lang="css" scoped>
