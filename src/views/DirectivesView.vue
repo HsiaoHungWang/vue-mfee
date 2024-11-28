@@ -20,6 +20,9 @@ import { ref } from 'vue';
 { "name": "萬華區", "code": 108 }
 ]);
 const selectedValue = ref('110')
+
+const user = ref({ "name": "Tom", "email": "Tom@gmail.com", "age": 30 })
+
 </script>
 
 <template>
@@ -37,10 +40,21 @@ const selectedValue = ref('110')
   <button>登入</button>
  </div>
 
+ <!--v-for讀取陣列中的資料-->
  <select v-model="selectedValue">
   <option v-for="(region,index) in regions" :key="region.code" :value="region.code">{{index}}{{region.name}}</option> 
  </select><span>{{selectedValue}}</span>
 </div>
+ <!--v-for讀取物件中的資料
+ {key:value,key:value}-->
+ <ul>
+  <li v-for="(value, key) in user">{{ key }}:{{ value }}</li>
+ </ul>
+
+ <!--v-for產生數字範圍-->
+ <ul class="pagination">   
+    <li class="page-item" v-for="page in 10"><a class="page-link" href="#">{{page}}</a></li> 
+ </ul>
 </template>
 
 <style lang="css" scoped>
