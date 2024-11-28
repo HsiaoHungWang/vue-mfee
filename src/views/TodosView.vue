@@ -30,6 +30,25 @@ const clearHandler = ()=>{
     <div class="col-6">
  <h2>代辦事項</h2>
 <input type="text" class="form-control" placeholder="想要做甚麼?" v-model="newTodo" @keyup.enter="enterHandler" @keyup.delete="clearHandler" />
+<ul class="list-group mt-3">
+  <li v-for="todo in todos" :key="todo.id"  class="list-group-item">
+    <div class="d-flex justify-content-between">
+      <div>
+         <input v-model="todo.completed" class="form-check-input me-3" type="checkbox">
+<label class="form-check-label">{{ todo.title }}</label>
+      </div>
+     
+
+    
+   
+    <button class="badge bg-danger rounded-pill border-0">X</button></div>
+  </li>
+</ul>
+<div class="mt-3 d-flex justify-content-between">
+<strong class=" me-3">尚有 {{  }} 個工作未完成</strong>
+<button class="btn btn-warning me-3">清除完成工作</button>
+</div>
+
     </div>
     <div class="col-3"></div>
   </div>
